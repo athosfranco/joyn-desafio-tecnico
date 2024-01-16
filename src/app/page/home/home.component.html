@@ -1,0 +1,31 @@
+<div id="home-page-container">
+  <img id="wave-bg" src="../assets/wave.svg" />
+  <div class="joyn-title-container">
+    <img class="home-img" src="../../../assets/users3.svg" />
+
+    <div class="col">
+      <h1 class="app-title">
+        <span style="color: #5670a0; font-weight: 600">Joyn</span>Clientes
+      </h1>
+      <p class="app-desc">
+        Projeto Frontend desenvolvido em Angular como Desafio Técnico para Joyn
+      </p>
+      <div class="home-btn-container">
+        <button
+          mat-raised-button
+          color="accent"
+          [routerLink]="['/client-list']"
+        >
+          Lista de Clientes
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['/new-client']"
+        >
+          Novo Cliente
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

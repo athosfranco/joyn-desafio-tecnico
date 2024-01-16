@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ this.data.title }}</h1>
+<mat-divider></mat-divider>
+<div mat-dialog-content>{{ this.data.content }}</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button color="primary" (click)="handleConfirm()">
+    Confirmar
+  </button>
+</div>

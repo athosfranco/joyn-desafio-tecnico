@@ -1,0 +1,136 @@
+<div class="fade-down">
+  <div class="title-container">
+    <img
+      class="avatar-img"
+      src="https://www.svgrepo.com/show/446527/avatar.svg"
+    />
+    <h1 class="montserrat">Cadastrar Novo Cliente</h1>
+  </div>
+  <div class="page-container">
+    <p
+      class="white"
+      style="font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.5"
+    >
+      Preencha o formulário abaixo para cadastrar um novo usuário.
+    </p>
+
+    <form class="form" (ngSubmit)="submitForm()" #clientForm="ngForm">
+      <span class="section-title">Informações Pessoais</span>
+      <div style="display: flex; gap: 1rem; margin-top: 1rem">
+        <mat-form-field class="full-width">
+          <mat-label>Nome</mat-label>
+          <input matInput name="firstName" ngModel maxlength="30" required />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput name="lastName" ngModel maxlength="30" required />
+        </mat-form-field>
+      </div>
+
+      <div class="flex-resp">
+        <mat-form-field class="full-width">
+          <mat-label>Código</mat-label>
+          <input
+            matInput
+            name="code"
+            type="number"
+            ngModel
+            placeholder="Ex. 123456"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Telefone</mat-label>
+          <input
+            matInput
+            name="phone"
+            ngModel
+            placeholder="Ex. (11) 99999-9999"
+            required
+          />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>CPF</mat-label>
+          <input
+            matInput
+            name="cpf"
+            ngModel
+            placeholder="Ex. 123.456.789-01"
+            required
+          />
+        </mat-form-field>
+      </div>
+
+      <span class="section-title">Localização</span>
+
+      <div class="flex-resp" style="margin-top: 1rem">
+        <mat-form-field class="full-width">
+          <mat-label>Cidade</mat-label>
+          <input
+            matInput
+            name="city"
+            required
+            ngModel
+            placeholder="Ex. São Paulo"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Estado</mat-label>
+          <input
+            matInput
+            name="state"
+            required
+            ngModel
+            placeholder="Ex. São Paulo"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>CEP</mat-label>
+          <input
+            matInput
+            name="cep"
+            ngModel
+            #postalCode="ngModel"
+            maxlength="5"
+            placeholder="Ex. 65074550"
+          />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="full-width">
+        <mat-label>Endereço</mat-label>
+        <textarea
+          matInput
+          name="address"
+          ngModel
+          placeholder="Ex. Rua Elisa de Albuquerque, nº 100"
+        ></textarea>
+      </mat-form-field>
+
+      <mat-divider style="margin: 1rem 0"></mat-divider>
+
+      <div class="button-container">
+        <button
+          type="button"
+          mat-raised-button
+          color="warn"
+          (click)="resetForm()"
+        >
+          <mat-icon>delete</mat-icon> Limpar formulário
+        </button>
+        <button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          [disabled]="clientForm.invalid"
+        >
+          <mat-icon>person_add</mat-icon> Cadastrar usuário
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

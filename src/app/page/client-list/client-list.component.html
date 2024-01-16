@@ -1,0 +1,87 @@
+<div class="fade-down">
+  <div class="title-container">
+    <img
+      class="avatar-img"
+      src="https://www.svgrepo.com/show/286578/users-young.svg"
+    />
+    <h1 class="montserrat">Lista de Clientes</h1>
+  </div>
+  <div class="page-container">
+    <div class="client-list-search-container">
+      <mat-form-field>
+        <mat-label>Pesquisar por nome...</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex.: João da Silva"
+          #input
+        />
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+      <div class="client-btn-container">
+        <button
+          mat-raised-button
+          color="accent"
+          color="warn"
+          (click)="openDialog()"
+        >
+          <mat-icon>delete</mat-icon> Limpar lista
+        </button>
+        <button
+          [routerLink]="['/new-client']"
+          mat-raised-button
+          color="primary"
+        >
+          <mat-icon>add</mat-icon> Novo Cadastro
+        </button>
+      </div>
+    </div>
+
+    <table
+      id="client-table"
+      style="background-color: #243b5b"
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8"
+    >
+      <ng-container matColumnDef="code">
+        <th class="white" mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.code }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th class="white" mat-header-cell *matHeaderCellDef>Nome Completo</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th class="white" mat-header-cell *matHeaderCellDef>Telefone</th>
+        <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cpf">
+        <th class="white" mat-header-cell *matHeaderCellDef>CPF</th>
+        <td mat-cell *matCellDef="let element">{{ element.cpf }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cityState">
+        <th class="white" mat-header-cell *matHeaderCellDef>Cidade e Estado</th>
+        <td mat-cell *matCellDef="let element">{{ element.cityState }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="5">
+          <div class="not-found fade-down">
+            <img src="../../../assets/emptysearch.svg" />
+            <span> Não foram encontrados resultados</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

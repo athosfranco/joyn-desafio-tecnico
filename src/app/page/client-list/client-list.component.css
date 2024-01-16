@@ -1,0 +1,66 @@
+.avatar-img {
+  width: 100px;
+  background-color: #aad7d9;
+  border-radius: 50%;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.client-list-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.client-list-search-container mat-form-field {
+  min-width: 300px;
+  margin-right: 1rem;
+  margin-top: 20px;
+}
+
+.not-found {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.not-found img {
+  width: 300px;
+}
+
+.not-found span {
+  font-size: 1.3rem;
+}
+.client-table ng-container th,
+td {
+  color: #ddd;
+}
+
+.client-btn-container {
+  display: flex;
+  gap: 1rem;
+}
+.client-btn-container button {
+  height: 50px;
+}
+
+@media (max-width: 450px) {
+  .client-list-search-container mat-form-field {
+    width: 100%;
+    margin: 0 1rem;
+  }
+  .client-list-search-container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .client-btn-container button {
+    flex: 1;
+  }
+}
