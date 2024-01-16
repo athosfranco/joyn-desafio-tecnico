@@ -1,4 +1,12 @@
+![image](https://github.com/athosfranco/joyn-desafio-tecnico/assets/73993813/5a797e1f-1b2e-4fa3-9e0d-fd4ae7489509)
+
 # JoynDesafioTecnicoFrontend
+
+Projeto desenvolvido para o processo seletivo da Joyn.
+
+É possível acessar o projeto em produção através do link: https://joyn-clientes-desafio-tecnico.netlify.app/
+
+____________________________________________________________________
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
